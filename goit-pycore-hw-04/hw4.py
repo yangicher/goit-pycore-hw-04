@@ -36,8 +36,11 @@ def get_phone(args, contacts):
 def get_all_contacts(contacts):
     if len(contacts) == 0:
         return "No contacts found."
+    res = ""
     for k, v in contacts.items():
-        print(f"{k}: {v}")
+        res+=f"{k}: {v}\n"
+
+    return res
 
 def main():
     contacts = {}
@@ -59,7 +62,7 @@ def main():
                 case "phone":
                     print(get_phone(args, contacts))
                 case "all":
-                    get_all_contacts(contacts)
+                    print(get_all_contacts(contacts))
                 case "help":
                     print(HELP)
                 case _:
